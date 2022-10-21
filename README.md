@@ -3,11 +3,11 @@
 ## ErrorBits stack_constructor(Stack *stack, StackSize capacity);
 
 checked next items
-- capacity is zero
-- capacity is negative number
-- function is not used before calling stack_push or stack_pop
-- stack pointer is invalid
-- capacity is too big
+- 1. capacity is zero
+- 2. capacity is negative number
+- 3. function is not used before calling stack_push or stack_pop
+- 4. stack pointer is invalid
+- 5. capacity is too big
 
 In all cases program puts error info in log file ("invalid capacity" in last case and "wrong struct canary" in others).
 FIND NO BUGS
@@ -26,4 +26,4 @@ In first case prints next info (WITHOUT ERROR CODE): "ErrorBits stack_push(Stack
 - 2. stack_pop() is called when nothing is in stack
 - 3.
 
-2 - stack_pop stops and returns error_code, the program works as stack_pop wasn't called at all;
+ii. - stack_pop stops and returns error_code, the program works as stack_pop wasn't called at all;
