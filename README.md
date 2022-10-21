@@ -28,6 +28,17 @@ In first case prints next info (WITHOUT ERROR CODE): "ErrorBits stack_push(Stack
 
 ii. - stack_pop stops and returns error_code, the program works as stack_pop wasn't called at all;
 
+## ErrorBits stack_destructor(Stack *stack) 
+
+
+```sh
+1. stack pointer is nullptr or invalid ptr
+2. stack_destructor() is called more than one time for one stack
+3.
+```
+
+2. doesn't call free more than one time, prints error info in log file ("Invalid data pointer");
+
 ## void stack_dump(Stack *stack, ErrorBits error, FILE *stream)
 
 As stack_dump() is not static user can call it.
