@@ -8,6 +8,7 @@ checked next items
 - function is not used before calling stack_push or stack_pop
 - stack pointer is invalid
 - capacity is too big
+
 In all cases program puts error info in log file ("invalid capacity" in last case and "wrong struct canary" in others).
 FIND NO BUGS
 
