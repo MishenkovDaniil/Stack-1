@@ -27,3 +27,33 @@ In first case prints next info (WITHOUT ERROR CODE): "ErrorBits stack_push(Stack
 - 3.
 
 ii. - stack_pop stops and returns error_code, the program works as stack_pop wasn't called at all;
+
+## void stack_dump(Stack *stack, ErrorBits error, FILE *stream)
+
+As stack_dump() is not static user can call it.
+The program could stop working (by segfault) in case stack data is nullptr (stack_dump() refers to stack data elements).
+```sh
+int main() 
+{
+    open_log("nlog.txt");
+    FILE *log_file = fopen ("nlog.txt", "w");
+    Stack stk = {};
+    
+    stack_constructor (&stk, 10);
+    stack_push (&stk, 2);
+    
+    stk.capacity  = 100000;
+    stk.data = nullptr;
+    stack_dump (&stk, 0, log_file); 
+    putchar ('t');
+    
+    fclose (log_file);
+    close_log();
+
+    stack_destructor (&stk);
+
+    return 0;
+}
+```
+
+(the program is stopped by segfault, 't' is not printed)
