@@ -21,10 +21,9 @@ In first case prints next info (WITHOUT ERROR CODE): "ErrorBits stack_push(Stack
 
 ## ErrorBits stack_pop(Stack *stack, Object *object);
 
-```sh
-1. stack pointer is nullptr or invalid ptr
-2. stack_pop() is called when nothing is in stack
-3.
-```
+
+- 1. stack pointer is nullptr or invalid ptr
+- 2. stack_pop() is called when nothing is in stack
+- 3.
 
 2 - stack_pop stops and returns error_code, the program works as stack_pop wasn't called at all;
